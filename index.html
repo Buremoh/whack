@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whack A Mole</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" defer src="js/script.js"></script>
+  </head>
+  <body>
+    <h1>Whack-a-mole!<span class="score">0</span></h1>
+    <p>Get the moles in their holes!</p>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <button onclick="startGame(); play(); play2(); startTimer()" id="demo">
+            Start!
+          </button>
+        </div>
+        <div class="col">
+          <button onclick="pauseGame()" id="pausebtn">Pause</button>
+        </div>
+        <h1 id="timer">0.00</h1>
+      </div>
+    </div>
+    
+    <audio
+      src="sound/mel.mp3"
+      id="sound"
+      loop="loop"
+      autoplay="autoplay"
+    ></audio>
+    <audio
+      src="sound/chattering.mp3"
+      id="sound2"
+      loop="loop"
+      autoplay="autoplay"
+    ></audio>
+
+
+    <div class="game">
+      <div class="hole hole1">
+        <div class="mole" id="m1" onclick="whack()"></div>
+      </div>
+      <div class="hole hole2">
+        <div class="mole" id="m2"></div>
+      </div>
+      <div class="hole hole3">
+        <div class="mole" id="m3"></div>
+      </div>
+      <div class="hole hole4">
+        <div class="mole" id="m4"></div>
+      </div>
+      <div class="hole hole5">
+        <div class="mole" id="m5"></div>
+      </div>
+      <div class="hole hole6">
+        <div class="mole" id="m6"></div>
+      </div>
+    </div>
+  </body>
+</html>
