@@ -10,6 +10,7 @@ function randomTime(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
 
+//setting a function for the holes
 function randomHole(holes) {
   const idx = Math.floor(Math.random() * holes.length);
   const hole = holes[idx];
@@ -47,42 +48,39 @@ function bonk(e) {
   scoreBoard.textContent = score;
 }
 
-function endGame() {
-  if ((timeUp = true)) {
-  }
-}
 moles.forEach((mole) => mole.addEventListener("click", bonk));
 
-// Play background music
+// setting a function to play background music
 function play() {
   let audio = document.getElementById("sound");
   audio.play();
+
+  setTimeout(function () {
+    audio.pause();
+    alert(
+      "Game Over! You scored " +
+        score +
+        " point(s). Hit the start button to play again."
+    );
+  }, 10000);
 }
 
-function whackSound() {
-  let audio = document.getElementById("bgm");
-  audio.whack();
+function play2() {
+  let audio = document.getElementById("sound2");
+  audio.play();
+
+  setTimeout(function () {
+    audio.pause();
+  }, 10000);
 }
-
-//pause game function
-let pausebtn = document.getElementById("pausebtn");
-//Add event Handling
-pausebtn.addEventListener("click", pause);
-
-function pause() {
-  if (game.played) {
-    game.pause();
-  } else {
-    game.pause();
-  }
-}
-
 
 //Setting a timer
-let timeleft = 10;
-let gameTime = setInterval(function () {
-  timeleft--;
-  document.getElementById("timer").textContent = timeleft;
-  if (timeleft <= 0) clearInterval(gameTime);
-}, 1000);
+function startTimer() {
+  let timeleft = 10;
+  let gameTime = setInterval(function () {
+    timeleft--;
+    document.getElementById("timer").textContent = timeleft;
+    if (timeleft <= 0) clearInterval(gameTime);
+  }, 1000);
+}
 
