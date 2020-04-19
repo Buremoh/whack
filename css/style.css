@@ -151,20 +151,41 @@ html {
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   html {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   html {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   html {
-      font-size: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Adding a line break for responsiveness on small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .br-on-mobile {
+    display: static;
+  }
+}
+
+/* Adding a line break for responsiveness on Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .br-on-mobile {
+    display: none;
+  }
+}
+
+/* Adding a line break for responsiveness on Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .br-on-mobile {
+    display: none;
   }
 }
