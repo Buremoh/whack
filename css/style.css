@@ -113,7 +113,8 @@ button:hover {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto 40px 40px auto;
+  grid-template-columns: repeat(auto-fit 100px);
+  grid-template-rows: repeat(3, 100px);
   position: center;
   height: 35px;
   width: 100%;
@@ -123,4 +124,21 @@ button:hover {
 #demo,
 #timer {
   position: relative;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (min-device-width: 600px) {
+  img[data-src-600px] {
+    content: attr(data-src-600px, url);
+  }
+}
+
+@media (min-device-width: 800px) {
+  img[data-src-800px] {
+    content: attr(data-src-800px, url);
+  }
 }
